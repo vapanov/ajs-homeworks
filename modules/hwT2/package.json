@@ -1,0 +1,26 @@
+{
+  "name": "modules_hw_t2",
+  "version": "1.0.0",
+  "description": "webpack homework ",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+  },
+  "keywords": [
+    "modules",
+    "webpack"
+  ],
+  "author": "VPanov <valentin.panov@me.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^5.0.0",
+    "mini-css-extract-plugin": "^1.3.5",
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {}
+}
