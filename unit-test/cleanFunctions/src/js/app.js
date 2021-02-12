@@ -1,9 +1,9 @@
-export default function healthStatus(obj) {
-  // {name: 'Маг', health: 90}
+export default function getHealthStatus(obj) {
+  // принимаем {name: 'Маг', health: 90}
   if (!obj.health) {
-    throw new Error('corrupted data request');
+    return 'corrupted data request';
   }
-  switch (obj.health) {
+  switch (true) {
     case obj.health > 50:
       return 'healthy';
     case obj.health < 15:
