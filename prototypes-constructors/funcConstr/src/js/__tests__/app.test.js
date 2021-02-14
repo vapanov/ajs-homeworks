@@ -1,16 +1,29 @@
-// import { loadUser } from '../user';
-// import { httpGet } from '../http';
+import createCharacter from '../app';
+import typeList from '../types';
 
-// jest.mock('../http');
+const testName = 'test';
+const testObj = typeList[2];
 
-// beforeEach(() => {
-//   jest.resetAllMocks();
-// });
+test('bad name', () => {
+  expect(() => {
+    createCharacter('1', testObj.type);
+  }).toThrowError(new Error('Requested name is inadmissible'));
+});
 
-// test('should call loadUser once', () => {
-//   httpGet.mockReturnValue(JSON.stringify({}));
+test('bad type', () => {
+  expect(() => {
+    createCharacter(testName, '1');
+  }).toThrowError(new Error('Requested type is inadmissible'));
+});
 
-//   const response = loadUser(1);
-//   expect(response).toEqual({});
-//   expect(httpGet).toBeCalledWith('http://server:8080/users/1');
-// });
+test('return character', () => {
+  const response = createCharacter(testName, testObj.type);
+  expect(response).toEqual({
+    name: testName,
+    type: testObj.type,
+    attack: testObj.attack,
+    defence: testObj.defence,
+    health: 100,
+    level: 1,
+  });
+});

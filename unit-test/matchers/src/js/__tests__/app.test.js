@@ -2,22 +2,22 @@ import sortUnitsByHealth from '../app';
 
 test('err data input', () => {
   const result = sortUnitsByHealth('');
-  expect(result).toEqual('corrupt data input');
+  expect(result).toBe('corrupt data input');
 });
 
-test('sort 2 similar', () => {
+test('expect .not.toBe ', () => {
   const units = [
     { name: 'мечник', health: 80 },
-    { name: 'маг', health: 100 },
-    { name: 'лучник', health: 180 },
+    { name: 'маг', health: 90 },
+    { name: 'лучник', health: 100 },
   ];
   const unitsSorted = [
-    { name: 'лучник', health: 180 },
-    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 100 },
+    { name: 'маг', health: 90 },
     { name: 'мечник', health: 80 },
   ];
   const result = sortUnitsByHealth(units);
-  expect(result).toEqual(unitsSorted);
+  expect(result).not.toBe(unitsSorted);
 });
 
 test('sort 5', () => {
