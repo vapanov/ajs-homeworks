@@ -1,6 +1,6 @@
 import typeList from './types';
 
-export default function createCharacter(givenName, type) {
+export default function CreateCharacter(givenName, type) {
   if (!givenName || givenName.length < 2 || givenName.length > 10) {
     throw new Error('Requested name is inadmissible');
   }
@@ -10,13 +10,11 @@ export default function createCharacter(givenName, type) {
   if (!type || !typeObj) {
     throw new Error('Requested type is inadmissible');
   }
-  const character = {
-    name: givenName,
-    type: typeObj.type,
-    attack: typeObj.attack,
-    defence: typeObj.defence,
-    level: 1,
-    health: 100,
-  };
-  return character;
+
+  this.name = givenName;
+  this.type = typeObj.type;
+  this.attack = typeObj.attack;
+  this.defence = typeObj.defence;
+  this.level = 1;
+  this.health = 100;
 }

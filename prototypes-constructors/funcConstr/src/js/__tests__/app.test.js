@@ -1,4 +1,4 @@
-import createCharacter from '../app';
+import CreateCharacter from '../app';
 import typeList from '../types';
 
 const testName = 'test';
@@ -6,18 +6,18 @@ const testObj = typeList[2];
 
 test('bad name', () => {
   expect(() => {
-    createCharacter('1', testObj.type);
+    CreateCharacter('1', testObj.type);
   }).toThrowError(new Error('Requested name is inadmissible'));
 });
 
 test('bad type', () => {
   expect(() => {
-    createCharacter(testName, '1');
+    CreateCharacter(testName, '1');
   }).toThrowError(new Error('Requested type is inadmissible'));
 });
 
 test('return character', () => {
-  const response = createCharacter(testName, testObj.type);
+  const response = new CreateCharacter(testName, testObj.type);
   expect(response).toEqual({
     name: testName,
     type: testObj.type,
