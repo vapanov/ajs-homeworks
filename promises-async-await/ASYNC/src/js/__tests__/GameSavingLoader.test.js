@@ -11,9 +11,3 @@ test('GameSavingLoader should return data', async () => {
   };
   expect(received).toEqual(expected);
 });
-
-// тест на заглушке
-// test('gameSavingLoader load() should throw an Err with empty data', async () => {
-//   const gameSavingLoader = new GameSavingLoader();
-//   expect(() => gameSavingLoader.load()).toThrowError();
-// });
