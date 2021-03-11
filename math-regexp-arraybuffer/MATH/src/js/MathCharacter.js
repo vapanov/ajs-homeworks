@@ -20,10 +20,10 @@ export default class MathCharacter extends Character {
   }
 
   get attack() {
-    let baseAttack = this.attackPoint - (this.attackDistance - 1) * 10;
+    let baseAttack = ((100 - (this.attackDistance - 1) * 10) / 100) * this.attackPoint;
     if (this.isStoned) {
-      baseAttack = Math.floor(baseAttack - Math.log2(this.attackDistance) * 5);
+      baseAttack -= Math.log2(this.attackDistance) * 5;
     }
-    return baseAttack > 0 ? baseAttack : 0;
+    return baseAttack > 0 ? Math.floor(baseAttack) : 0;
   }
 }

@@ -24,18 +24,18 @@ test('Attack on the nearest cell should not decrease with get stoned', () => {
 
 test('Attack should decrease with distance', () => {
   const testMagician = new Magician('Gandalf', 'Magician');
-  testMagician.attack = 100;
+  testMagician.attack = 200;
   testMagician.stoned = 0;
   testMagician.attackDistance = 2;
-  expect(testMagician.attack).toBe(90);
+  expect(testMagician.attack).toBe(180);
 });
 
 test('Attack should decrease with distance and get stoned', () => {
   const testMagician = new Magician('Gandalf', 'Magician');
-  testMagician.attack = 100;
+  testMagician.attack = 200;
   testMagician.stoned = 1;
   testMagician.attackDistance = 2;
-  expect(testMagician.attack).toBe(85);
+  expect(testMagician.attack).toBe(175);
 });
 
 test('Attack should not be less than 0', () => {

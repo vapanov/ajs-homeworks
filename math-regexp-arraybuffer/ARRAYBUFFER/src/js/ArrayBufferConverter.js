@@ -9,8 +9,7 @@ export default class ArrayBufferConverter {
 
   toString() {
     try {
-      const result = [...this.buffer].map((key) => String.fromCharCode(key)).join('');
-      return result;
+      return String.fromCharCode(...this.buffer);
     } catch (err) {
       throw new Error('bad data inside');
     }
